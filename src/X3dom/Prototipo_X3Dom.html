@@ -1,0 +1,636 @@
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Lightbot</title>
+    <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script>
+    <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'/>
+</head>
+<!--Botões das cameras. Definições no final do código-->
+
+
+<body>
+<h1>Level 1</h1>
+<button onclick="document.getElementById('1').setAttribute('set_bind','true');">Camera_1</button>
+<button onclick="document.getElementById('2').setAttribute('set_bind','true');">Camera_2</button>
+<button onclick="document.getElementById('3').setAttribute('set_bind','true');">Camera_3</button>
+<button onclick="document.getElementById('4').setAttribute('set_bind','true');">Camera_4</button>
+
+<x3d width='500px' height='500px'>
+<scene>
+<!--ESTRELA e "NEXT LEVEL" Animação no final do grupo-->
+<Group>
+    <Transform DEF="star" translation="7 7 4" scale="0.8 0.8 0.8">
+    <Transform translation="-6 0 0" rotation="0 -1 0 1.14">
+        <Shape>
+            <Text string='"NEXT LEVEL "'>
+                <FontStyle DEF='CenteredFontStyle' justify='"MIDDLE" "MIDDLE"'/>
+            </Text> 
+            <Appearance>
+                <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor=".5 .5 .5"/>
+            </Appearance>
+        </Shape>
+    </Transform>
+    <Transform translation="0 -1.5 0" rotation="0 -1 0 1.14" scale="4 4 4">
+        <Shape>
+            <Text string='"*"'>
+                <FontStyle DEF='CenteredFontStyle' justify='"MIDDLE" "MIDDLE"'/>
+            </Text> 
+            <Appearance>
+                <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor=".5 .5 .5"/>
+            </Appearance>
+        </Shape>
+    </Transform>
+    <PositionInterpolator DEF="starChange"
+    key="0 0.85 0.87 0.95 1"
+    keyValue="-10 5 -8  5 7 4  7 7 4  7 7 4  7 7 4"
+    ></PositionInterpolator>
+</Group>
+
+<!--ESTRELAS estáticas-->
+<Group>
+    <Transform translation="10 4 0" rotation="0 -1 0 1.14" scale="4 4 4">
+        <Shape>
+            <Text string='"*"'>
+                <FontStyle DEF='CenteredFontStyle' justify='"MIDDLE" "MIDDLE"'/>
+            </Text> 
+            <Appearance>
+                <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor=".5 .5 .5"/>
+            </Appearance>
+        </Shape>
+    </Transform>
+    <Transform translation="8 7.5 0" rotation="0 -1 0 1.14" scale="2 2 2">
+        <Shape>
+            <Text string='"*"'>
+                <FontStyle DEF='CenteredFontStyle' justify='"MIDDLE" "MIDDLE"'/>
+            </Text> 
+            <Appearance>
+                <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor=".5 .5 .5"/>
+            </Appearance>
+        </Shape>
+    </Transform>
+    <Transform translation="4 5 0" rotation="0 -1 0 1.14" scale="1 1 1">
+        <Shape>
+            <Text string='"*"'>
+                <FontStyle DEF='CenteredFontStyle' justify='"MIDDLE" "MIDDLE"'/>
+            </Text> 
+            <Appearance>
+                <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor=".5 .5 .5"/>
+            </Appearance>
+        </Shape>
+    </Transform>
+    </Transform>
+    <Transform translation="-1 6 0" rotation="0 -1 0 1.14" scale="1 1 1">
+        <Shape>
+            <Text string='"*"'>
+                <FontStyle DEF='CenteredFontStyle' justify='"MIDDLE" "MIDDLE"'/>
+            </Text> 
+            <Appearance>
+                <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor=".5 .5 .5"/>
+            </Appearance>
+        </Shape>
+    </Transform>
+    <Transform translation="0 7 0" rotation="0 -1 0 1.14" scale="2 2 2">
+        <Shape>
+            <Text string='"*"'>
+                <FontStyle DEF='CenteredFontStyle' justify='"MIDDLE" "MIDDLE"'/>
+            </Text> 
+            <Appearance>
+                <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor=".5 .5 .5"/>
+            </Appearance>
+        </Shape>
+    </Transform>
+</Group>
+
+<!--PAI NATAL Animação de movimento, rotação e luz do chapeu no fim do grupo-->
+<Group>
+<transform DEF="paiNatal" scale="0.8 0.8 0.8">
+<Transform DEF="bolaChapeu" translation="0 3.6 -0.4">
+    <Shape>
+        <Appearance>
+            <Material DEF="yellow" diffuseColor="1 1 1" specularColor=".5 .5 .5"/>
+        </Appearance>
+        <Sphere radius="0.2"/>
+    </Shape>
+</Transform>
+<Transform DEF="chapeu" rotation="-1 0 0 0.25" translation="0 3.3 -0.2" scale=".5 .5 .5">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 0 0" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Cone/>
+    </Shape>
+</Transform>
+<Transform DEF="cabelo" translation="0 2.6 -0.01">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Sphere radius="0.5"/>
+    </Shape>
+</Transform>
+<Transform DEF="cabeca" translation="0 2.6 0">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="0.8 0.6 0.6" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Sphere radius="0.5"/>
+    </Shape>
+</Transform>
+<Transform DEF="sobrancelha" translation="0.2 2.84 0.35" rotation="1 0.9 -0.5 3.14">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Cylinder radius="0.05" height="0.3" />
+    </Shape>
+</Transform>
+<Transform DEF="sobrancelha" translation="0 2.86 0.4" rotation="1 1 0 3.14">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Cylinder radius="0.05" height="0.3" />
+    </Shape>
+</Transform>
+<Transform DEF="sobrancelha" translation="-0.2 2.84 0.35" rotation="1 -0.9 0.5 3.14">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Cylinder radius="0.05" height="0.3" />
+    </Shape>
+</Transform>
+<Transform DEF="olho" translation="0.15 2.7 0.4">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="0 0 0" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Sphere radius="0.1"/>
+    </Shape>
+</Transform>
+<Transform DEF="olho" translation="-0.15 2.7 0.4">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="0 0 0" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Sphere radius="0.1"/>
+    </Shape>
+</Transform>
+<Transform DEF="nariz" translation="0 2.55 0.45">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 0.4 0.4" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Sphere radius="0.1"/>
+    </Shape>
+</Transform>
+<Transform DEF="bigode" translation="0.2 2.44 0.45" rotation="1 0.9 -0.5 3.14">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Cylinder radius="0.05" height="0.3" />
+    </Shape>
+</Transform>
+<Transform DEF="bigode" translation="0 2.46 0.45" rotation="1 1 0 3.14">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Cylinder radius="0.05" height="0.3" />
+    </Shape>
+</Transform>
+<Transform DEF="bigode" translation="-0.2 2.44 0.45" rotation="1 -0.9 0.5 3.14">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Cylinder radius="0.05" height="0.3" />
+    </Shape>
+</Transform>
+<Transform DEF="barba" translation="0 2.1 0.1" scale="-0.4 -0.25 0.4">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Cone/>
+    </Shape>
+</Transform>
+<Transform DEF="barriga" translation="0 1.5 0">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 0 0" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Sphere radius="0.6"/>
+    </Shape>
+</Transform>
+<Transform DEF="ombro" translation="0.5 1.8 0">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 0 0" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Sphere radius="0.3"/>
+    </Shape>
+</Transform>
+<Transform DEF="ombro" translation="-0.5 1.8 0">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 0 0" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Sphere radius="0.3"/>
+    </Shape>
+</Transform>
+<Transform DEF="braco" translation="-0.7 1.5 0" rotation="1 -0.1 0 3.14">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 0 0" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Cylinder radius="0.15" height="0.7" />
+    </Shape>
+</Transform>
+<Transform DEF="braco" translation="0.7 1.5 0" rotation="1 0.1 0 3.14">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 0 0" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Cylinder radius="0.15" height="0.7" />
+    </Shape>
+</Transform>
+<Transform DEF="botao1" translation="0 1.8 0.5">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Sphere radius="0.1"/>
+    </Shape>
+</Transform>
+<Transform DEF="botao2" translation="0 1.57 0.55">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Sphere radius="0.1"/>
+    </Shape>
+</Transform>
+<Transform DEF="botao3" translation="0 1.35 0.55">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Sphere radius="0.1"/>
+    </Shape>
+</Transform>
+<Transform DEF="perna" translation="-0.3 1.05 0">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 0 0" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Cylinder radius="0.2" height="1.0" />
+    </Shape>
+</Transform>
+<Transform DEF="perna" translation="0.3 1.05 0">
+    <Shape>
+        <Appearance>
+            <Material diffuseColor="1 0 0" specularColor=".5 .5 .5" />
+        </Appearance>
+        <Cylinder radius="0.2" height="1.0" />
+    </Shape>
+</Transform>
+</transform>
+
+<PositionInterpolator DEF="colorChangeChapeu"
+    key="0 0.34545454544 0.35 0.4 0.85 0.9 1"
+    keyValue="1 1 1  1 1 1  1 1 0  1 1 1  1 1 1  1 1 0  1 1 0"
+></PositionInterpolator>
+
+<PositionInterpolator DEF="move"
+    key="0 0.1 0.2 0.25 0.35 0.4 0.5 0.55 0.6 0.7 0.75 0.85 1"
+    keyValue="0 0 0  0 0 1  0 0 2  0 0 2  1 0 2  1 1.3 2  2 1 2  2 1 2  2 2.3 2  2 2 1  2 3.3 1  2 3 0  2 3 0"
+></PositionInterpolator>
+
+<OrientationInterpolator DEF="spin"
+    key="0 0.1 0.2 0.25 0.35 0.4 0.5 0.55 0.6 0.7 0.75 0.85 1"
+    keyValue="0 0 0 3.14  0 0 0 3.14  0 0 0 3.14  0 1 0 1.57  0 1 0 1.57  0 1 0 1.57  0 1 0 1.57  0 1 0 3.14  0 1 0 3.14  0 1 0 3.14  0 1 0 3.14  0 1 0 3.14  0 1 0 3.14"
+></OrientationInterpolator>
+</Group>
+
+<!--CUBOS sem lampada-->
+<Group DEF="tile" render='true'>
+    <Transform DEF="neve" translation="0.45 0.5 0" rotation="0 1 1 3.14">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Cylinder radius="0.1" height="0.6" />
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="-0.45 0.5 0" rotation="0 1 1 3.14">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Cylinder radius="0.1" height="0.6" />
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0 0.5 0.45" rotation="1 1 0 3.14">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Cylinder radius="0.1" height="0.6" />
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0 0.5 -0.45" rotation="1 1 0 3.14">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Cylinder radius="0.1" height="0.6" />
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="-0.34 0.4 0.34">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Sphere radius="0.2"/>
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0.34 0.4 -0.34">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Sphere radius="0.2"/>
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0.34 0.4 0.34">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Sphere radius="0.2"/>
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="-0.34 0.4 -0.34">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Sphere radius="0.2"/>
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0 0.5 0">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor='1 1 1'/>
+            </Appearance>
+            <Box size='0.97 0.01 0.97'/>
+        </Shape>
+    </Transform>
+    <Shape>
+        <Appearance>
+            <Material diffuseColor='0 1 1'/>
+        </Appearance>
+        <Box size='.98 .98 .98'/>
+    </Shape>
+</Group>
+
+<!--Um grupo para cada lampada. A animação é definida no final de cada grupo-->
+<Group DEF="lampada1" render='true'>
+    <Transform DEF="neve" translation="0.45 0.5 0" rotation="0 1 1 3.14">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Cylinder radius="0.1" height="0.6" />
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="-0.45 0.5 0" rotation="0 1 1 3.14">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Cylinder radius="0.1" height="0.6" />
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0 0.5 0.45" rotation="1 1 0 3.14">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Cylinder radius="0.1" height="0.6" />
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0 0.5 -0.45" rotation="1 1 0 3.14">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Cylinder radius="0.1" height="0.6" />
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="-0.34 0.4 0.34">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Sphere radius="0.2"/>
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0.34 0.4 -0.34">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Sphere radius="0.2"/>
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0.34 0.4 0.34">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Sphere radius="0.2"/>
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="-0.34 0.4 -0.34">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Sphere radius="0.2"/>
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0 0.5 0">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor='1 1 1'/>
+            </Appearance>
+            <Box size='0.97 0.01 0.97'/>
+        </Shape>
+    </Transform>
+    <Shape>
+        <Appearance>
+            <Material DEF="lampON1" diffuseColor='0 0 1'/>
+        </Appearance>
+        <Box size='.98 .98 .98'></Box>
+    </Shape>
+    <PositionInterpolator DEF="lampColor1"
+    key="0 0.3 0.35 1"
+    keyValue="0 0 1  0 0 1  1 1 0  1 1 0"
+    ></PositionInterpolator>
+</Group>
+
+<!--Um grupo para cada lampada. A animação é definida no final de cada grupo-->
+<Group DEF="lampada2" render='true'>
+    <Transform DEF="neve" translation="0.45 0.5 0" rotation="0 1 1 3.14">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Cylinder radius="0.1" height="0.6" />
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="-0.45 0.5 0" rotation="0 1 1 3.14">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Cylinder radius="0.1" height="0.6" />
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0 0.5 0.45" rotation="1 1 0 3.14">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Cylinder radius="0.1" height="0.6" />
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0 0.5 -0.45" rotation="1 1 0 3.14">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Cylinder radius="0.1" height="0.6" />
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="-0.34 0.4 0.34">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Sphere radius="0.2"/>
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0.34 0.4 -0.34">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Sphere radius="0.2"/>
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0.34 0.4 0.34">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Sphere radius="0.2"/>
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="-0.34 0.4 -0.34">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor="1 1 1" specularColor=".5 .5 .5" />
+            </Appearance>
+            <Sphere radius="0.2"/>
+        </Shape>
+    </Transform>
+    <Transform DEF="neve" translation="0 0.5 0">
+        <Shape>
+            <Appearance>
+                <Material diffuseColor='1 1 1'/>
+            </Appearance>
+            <Box size='0.97 0.01 0.97'/>
+        </Shape>
+    </Transform>
+    <Shape>
+        <Appearance>
+            <Material DEF="lampON2" diffuseColor='0 0 1'/>
+        </Appearance>
+        <Box size='.98 .98 .98'></Box>
+    </Shape>
+    <PositionInterpolator DEF="lampColor2"
+    key="0 0.85 0.9 1"
+    keyValue="0 0 1  0 0 1  1 1 0  1 1 0"
+    ></PositionInterpolator>
+</Group>
+
+<!--CADA LAMPADA tem um nome diferente para poder ser animada-->
+<Transform translation='0 0 0'> <Shape USE="tile"/> </Transform>
+<Transform translation='1 0 0'> <Shape USE="lampada1"/> </Transform>
+<Transform translation='2 0 0'> <Shape USE="tile"/> </Transform>
+
+<Transform translation='0 0 1'> <Shape USE="tile"/> </Transform>
+<Transform translation='1 0 1'> <Shape USE="tile"/> </Transform>
+<Transform translation='2 0 1'> <Shape USE="tile"/> </Transform>
+
+<Transform translation='0 0 2'> <Shape USE="tile"/> </Transform>
+<Transform translation='1 0 2'> <Shape USE="lampada1"/> </Transform>
+<Transform translation='2 0 2'> <Shape USE="tile"/> </Transform>
+
+<Transform translation='2 1 0'> <Shape USE="tile"/> </Transform>
+<Transform translation='2 1 1'> <Shape USE="tile"/> </Transform>
+<Transform translation='2 1 2'> <Shape USE="tile"/> </Transform>
+
+<Transform translation='2 2 0'> <Shape USE="tile"/> </Transform>
+<Transform translation='2 2 1'> <Shape USE="tile"/> </Transform>
+
+<Transform translation='2 3 0'> <Shape USE="lampada2"/> </Transform>
+
+
+<!--Base de tempo para todas as animações-->
+<timeSensor DEF="time" cycleInterval="10" loop='true'></timeSensor>
+
+<!--ESTRELA começa o movimento no inicio do jogo, e posiciona-se depois da ultima lampada até ao fim do jogo-->
+<Route fromNode="time" fromField ="fraction_changed" toNode="starChange" toField="set_fraction"></Route>
+<Route fromNode="starChange" fromField ="value_changed" toNode="star" toField="set_translation"></Route>
+
+<!--MOVIMENTOS DO PAI NATAL PELO TABULEIRO-->
+<Route fromNode="time" fromField ="fraction_changed" toNode="move" toField="set_fraction"></Route>
+<Route fromNode="move" fromField ="value_changed" toNode="paiNatal" toField="set_translation"></Route>
+
+<!--ROTAÇÃO DO PAI NATAL-->
+<Route fromNode="time" fromField ="fraction_changed" toNode="spin" toField="set_fraction"></Route>
+<Route fromNode="spin" fromField ="value_changed" toNode="paiNatal" toField="set_rotation"></Route>
+
+<!--BOLA CHAPEU Acende ao chegar à primeira, apaga quando saí. Repete para todas as lampadas-->
+<Route fromNode="time" fromField ="fraction_changed" toNode="colorChangeChapeu" toField="set_fraction"></Route>
+<Route fromNode="colorChangeChapeu" fromField ="value_changed" toNode="yellow" toField="diffuseColor"></Route>
+
+<!--PRIMEIRA LAMPADA Acende ao passar e mantem até ao fim do jogo-->
+<Route fromNode="time" fromField ="fraction_changed" toNode="lampColor1" toField="set_fraction"></Route>
+<Route fromNode="lampColor1" fromField ="value_changed" toNode="lampON1" toField="diffuseColor"></Route>
+
+<!--SEGUNDA LAMPADA Acende ao passar e mantem até ao fim do jogo-->
+<Route fromNode="time" fromField ="fraction_changed" toNode="lampColor2" toField="set_fraction"></Route>
+<Route fromNode="lampColor2" fromField ="value_changed" toNode="lampON2" toField="diffuseColor"></Route>
+
+
+<!--Pontos de vista associados às cameras-->
+<Viewpoint id="1" centerOfRotation="0 0 0" position="-5 7 12"
+orientation="1 3 1 -0.7" description="camera_1"></Viewpoint>
+<Viewpoint id="2" centerOfRotation="0 0 0" position="-4 6 13"
+orientation="1 3 1 -0.5" description="camera_2"></Viewpoint>
+<Viewpoint id="3" centerOfRotation="0 0 0" position="-1 5 14"
+orientation="1 3 1 -0.3" description="camera_3"></Viewpoint>
+<Viewpoint id="4" centerOfRotation="0 0 0" position="2 3 12"
+orientation="1 3 1 0" description="camera_4"></Viewpoint>
+
+<Background skyColor='0.15455 0.84411 0.1464646'/>
+</scene>
+</x3d>
+</body>
+</html>

@@ -1,0 +1,97 @@
+                    <FontStyle DEF='CenteredFontStyle' justify='MIDDLE' 'MIDDLE'/>
+                </Text> 
+                <Appearance>
+                    <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor='.5 .5 .5'/>
+                </Appearance>
+            </Shape>
+        </Transform>
+        <Transform translation='0 -1.5 0' rotation='0 -1 0 1.14' scale='4 4 4'>
+            <Shape>
+                <Text string='*'>
+                    <FontStyle DEF='CenteredFontStyle' justify='MIDDLE' 'MIDDLE'/>
+                </Text> 
+                <Appearance>
+                    <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor='.5 .5 .5'/>
+                </Appearance>
+            </Shape>
+        </Transform>
+    </transform>
+    <PositionInterpolator DEF='starChange'
+    key='0 0.90 0.95 1'
+    keyValue='0 0 -100  0 0 -100  3 7 10  3 7 10'>
+    </PositionInterpolator>
+</Group>
+
+
+<Group>
+    <Transform translation='18 1 0' rotation='0 -1 0 1.14' scale='4 4 4'>
+        <Shape>
+            <Text string='*'>
+                <FontStyle DEF='CenteredFontStyle' justify='MIDDLE' 'MIDDLE'/>
+            </Text> 
+            <Appearance>
+                <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor='.5 .5 .5'/>
+            </Appearance>
+        </Shape>
+    </Transform>
+    <Transform translation='11 5 0' rotation='0 -1 0 1.14' scale='2 2 2'>
+        <Shape>
+            <Text string='*'>
+                <FontStyle DEF='CenteredFontStyle' justify='MIDDLE' 'MIDDLE'/>
+            </Text> 
+            <Appearance>
+                <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor='.5 .5 .5'/>
+            </Appearance>
+        </Shape>
+    </Transform>
+    <Transform translation='4 5 0' rotation='0 -1 0 1.14' scale='1 1 1'>
+        <Shape>
+            <Text string='*'>
+                <FontStyle DEF='CenteredFontStyle' justify='MIDDLE' 'MIDDLE'/>
+            </Text> 
+            <Appearance>
+                <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor='.5 .5 .5'/>
+            </Appearance>
+        </Shape>
+    </Transform>
+    <Transform translation='6 6 -7' rotation='0 -1 0 1.14' scale='1 1 1'>
+        <Shape>
+            <Text string='*'>
+                <FontStyle DEF='CenteredFontStyle' justify='MIDDLE' 'MIDDLE'/>
+            </Text> 
+            <Appearance>
+                <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor='.5 .5 .5'/>
+            </Appearance>
+        </Shape>
+    </Transform>
+    <Transform translation='-4 5 -10' rotation='0 -1 0 1.14' scale='2 2 2'>
+        <Shape>
+            <Text string='*'>
+                <FontStyle DEF='CenteredFontStyle' justify='MIDDLE' 'MIDDLE'/>
+            </Text> 
+            <Appearance>
+                <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor='.5 .5 .5'/>
+            </Appearance>
+        </Shape>
+    </Transform>
+    <Transform translation='1 6 -7' rotation='0 -1 0 1.14' scale='2 2 2'>
+        <Shape>
+            <Text string='*'>
+                <FontStyle DEF='CenteredFontStyle' justify='MIDDLE' 'MIDDLE'/>
+            </Text> 
+            <Appearance>
+                <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor='.5 .5 .5'/>
+            </Appearance>
+        </Shape>
+    </Transform>
+    <Transform translation='1 6 -18' rotation='0 -1 0 1.14' scale='2 2 2'>
+        <Shape>
+            <Text string='*'>
+                <FontStyle DEF='CenteredFontStyle' justify='MIDDLE' 'MIDDLE'/>
+            </Text> 
+            <Appearance>
+                <Material DEF='DefaultMaterial' diffuseColor='1 1 1'  specularColor='.5 .5 .5'/>
+            </Appearance>
+        </Shape>
+    </Transform>
+</Group>
